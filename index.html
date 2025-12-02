@@ -14,38 +14,7 @@
 </head>
 <body>
 
-    <!-- PROTECCIÓN: pegar al inicio del <body> -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyA4aeYmGj3qB-pn_XPrktI0YyniQRWQfZo",
-    authDomain: "sirius-381d6.firebaseapp.com",
-    projectId: "sirius-381d6",
-    storageBucket: "sirius-381d6.firebasestorage.app",
-    messagingSenderId: "651748635041",
-    appId: "1:651748635041:web:e3a1c502aed11c2ac2dbe0"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Si no hay usuario, redirige a login
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      // Evitar bucle si estamos ya en login
-      if (!location.pathname.endsWith('/auth/login.html')) {
-        location.href = '/auth/login.html';
-      }
-    } else {
-      // Aquí puedes obtener info del usuario y continuar
-      console.log('Usuario autenticado:', user.email);
-      // Opcional: guardar token si necesitas llamar APIs seguras
-      // user.getIdToken().then(t => sessionStorage.setItem('fb_token', t));
-    }
-  });
-</script>
+ 
 
 
 <!-- =========================================================
